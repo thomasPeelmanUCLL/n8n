@@ -40,11 +40,11 @@ spec:
                   name: n8n-secrets
                   key: N8N_ENCRYPTION_KEY
             - name: N8N_HOST
-              value: n8n.example.com
+              value: n8n.euroclasstravel.com
             - name: N8N_PROTOCOL
               value: https
             - name: WEBHOOK_URL
-              value: https://n8n.example.com/
+              value: https://n8n.euroclasstravel.com/
           volumeMounts:
             - name: n8n-data
               mountPath: /home/node/.n8n
