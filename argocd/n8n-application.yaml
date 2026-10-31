@@ -6,9 +6,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/youruser/homelab-gitops.git
+    repoURL: https://github.com/thomasPeelmanUCLL/n8n.git
     targetRevision: main
-    path: apps/n8n/base
+    path: k8s
   destination:
     server: https://kubernetes.default.svc
     namespace: n8n
