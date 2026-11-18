@@ -19,6 +19,8 @@ spec:
           ports:
             - containerPort: 5678
           env:
+            - name: NODE_EXTRA_CA_CERTS
+              value: /etc/ollama-ca/ca.crt
             - name: DB_TYPE
               value: postgresdb
             - name: DB_POSTGRESDB_HOST
@@ -48,6 +50,9 @@ spec:
           volumeMounts:
             - name: n8n-data
               mountPath: /home/node/.n8n
+            - name: ollama-ca
+              mountPath: /etc/ollama-ca
+              readOnly: true
           readinessProbe:
             httpGet:
               path: /healthz
@@ -62,6 +67,10 @@ spec:
         - name: n8n-data
           persistentVolumeClaim:
             claimName: n8n-data
+        - name: ollama-ca
+          configMap:
+            name: ollama-ca
+            defaultMode: 0444
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
