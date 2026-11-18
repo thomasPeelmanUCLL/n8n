@@ -13,6 +13,7 @@ spec:
       labels:
         app: n8n
     spec:
+      enableServiceLinks: false
       containers:
         - name: n8n
           image: n8nio/n8n:latest
@@ -21,6 +22,10 @@ spec:
           env:
             - name: NODE_EXTRA_CA_CERTS
               value: /etc/ollama-ca/ca.crt
+            - name: N8N_LISTEN_ADDRESS
+              value: 0.0.0.0
+            - name: N8N_PORT
+              value: "5678"
             - name: DB_TYPE
               value: postgresdb
             - name: DB_POSTGRESDB_HOST
