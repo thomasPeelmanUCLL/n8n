@@ -50,8 +50,14 @@ spec:
               value: n8n.iswleuven.com
             - name: N8N_PROTOCOL
               value: https
-            - name: WEBHOOK_URL
+            - name: N8N_WEBHOOK_URL
               value: https://n8n.iswleuven.com/
+          resources:
+            requests:
+              cpu: 500m
+              memory: 1Gi
+            limits:
+              memory: 2Gi
           volumeMounts:
             - name: n8n-data
               mountPath: /home/node/.n8n
@@ -76,9 +82,9 @@ spec:
             httpGet:
               path: /healthz
               port: 5678
-            periodSeconds: 10
+            periodSeconds: 15
             timeoutSeconds: 5
-            failureThreshold: 3
+            failureThreshold: 5
       volumes:
         - name: n8n-data
           persistentVolumeClaim:
