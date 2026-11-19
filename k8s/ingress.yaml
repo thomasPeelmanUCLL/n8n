@@ -6,7 +6,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: n8n.iswleuven.com
+    - host: n8n.iswleuven.be
       http:
         paths:
           - path: /

@@ -47,11 +47,11 @@ spec:
                   name: n8n-secrets
                   key: N8N_ENCRYPTION_KEY
             - name: N8N_HOST
-              value: n8n.iswleuven.com
+              value: n8n.iswleuven.be
             - name: N8N_PROTOCOL
               value: https
             - name: N8N_WEBHOOK_URL
-              value: https://n8n.iswleuven.com/
+              value: https://n8n.iswleuven.be/
           resources:
             requests:
               cpu: 100m
